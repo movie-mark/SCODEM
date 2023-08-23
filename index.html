@@ -1,0 +1,39 @@
+<script src="https://cdn.botpress.cloud/webchat/v0/inject.js"></script>
+ 
+/
+<script>
+    window.botpressWebChat.init({
+        // Replace <your-bot-id> and <your-client-id> with your actual bot and client IDs
+        "botId": "fe00ccea-5352-4be2-80ae-2dacfc2800eb",
+        "clientId": "fe00ccea-5352-4be2-80ae-2dacfc2800eb",
+ 
+        // Set the URL for the Botpress WebChat JavaScript file and the messaging server
+        "hostUrl": "https://cdn.botpress.cloud/webchat/v0",
+        "messagingUrl": "https://messaging.botpress.cloud",
+ 
+        // Set the name of the bot that will be displayed in the WebChat interface
+        "botName": "AIA de SCODEM",
+ 
+        // Set the width of the WebChat container and layout to 100% (Full Screen)
+        "containerWidth": "100%25",
+        "layoutWidth": "100%25",
+ 
+        // Hide the widget and disable animations
+        "hideWidget": true,
+        "disableAnimations": true,
+      "showConversationsButton": false,
+    "enableTranscriptDownload": false,
+    "enableConversationDeletion": false, // Change to true to allow user to delete conversation history
+    "showCloseButton": false, // Change to false to hide the close button
+    });
+ 
+    // Opens up the Chatbot by default
+    // This lets users start chatting with the Chatbot without needing to click any buttons or menus.
+    window.botpressWebChat.onEvent(
+        function () {
+            window.botpressWebChat.sendEvent({ type: "show" });
+        },
+        ["LIFECYCLE.LOADED"]
+    );
+</script>
+ 
